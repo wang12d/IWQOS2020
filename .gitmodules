@@ -1,0 +1,3 @@
+[submodule "pypbc"]
+	path = pypbc
+	url = https://github.com/debatem1/pypbc

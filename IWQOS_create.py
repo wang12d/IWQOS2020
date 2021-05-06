@@ -199,7 +199,7 @@ print(broker)
 
 
 
-f_broker=open('/Users/chen/PycharmProjects/ICC_2020_forward secure_verifiable/broker.txt','wb')
+f_broker=open('./data/broker.txt','wb')
 pickle.dump(broker, f_broker, 0)
 f_broker.close()
 
@@ -210,9 +210,9 @@ model = AES.MODE_ECB
 ############################################################################生成授权
 #每个 broker 两个 master key + secret key
 #broker1  生成k
-master_key1_b1=hmac.new(b'b1master1').digest()
-master_key2_b1=hmac.new(b'b1master2').digest()
-secret_key_b1=hmac.new(b'b1secret').digest()
+master_key1_b1=hmac.new(b'b1master1', digestmod='md5').digest()
+master_key2_b1=hmac.new(b'b1master2', digestmod='md5').digest()
+secret_key_b1=hmac.new(b'b1secret', digestmod='md5').digest()
 Ib1='broker1ID0000000'
 IDb1=Ib1.encode('utf-8')
 
@@ -240,9 +240,9 @@ b1=[Fb1pie, Fb1_1, Fb1_2]
 #print(b1)
 
 #broker2
-master_key1_b2=hmac.new(b'b2master1').digest()
-master_key2_b2=hmac.new(b'b2master2').digest()
-secret_key_b2=hmac.new(b'b2secret').digest()
+master_key1_b2=hmac.new(b'b2master1', digestmod='md5').digest()
+master_key2_b2=hmac.new(b'b2master2', digestmod='md5').digest()
+secret_key_b2=hmac.new(b'b2secret', digestmod='md5').digest()
 Ib2='broker2ID0000000'
 IDb2=Ib2.encode('utf-8')
 
@@ -260,9 +260,9 @@ b2=[Fb2pie, Fb2_1, Fb2_2]
 
 
 #broker3
-master_key1_b3=hmac.new(b'b3master1').digest()
-master_key2_b3=hmac.new(b'b3master2').digest()
-secret_key_b3=hmac.new(b'b3secret').digest()
+master_key1_b3=hmac.new(b'b3master1', digestmod='md5').digest()
+master_key2_b3=hmac.new(b'b3master2', digestmod='md5').digest()
+secret_key_b3=hmac.new(b'b3secret', digestmod='md5').digest()
 Ib3='broker3ID0000000'
 IDb3=Ib3.encode('utf-8')
 
@@ -282,9 +282,9 @@ b3=[Fb3pie, Fb3_1, Fb3_2]
 
 
 #broker4
-master_key1_b4=hmac.new(b'b4master1').digest()
-master_key2_b4=hmac.new(b'b4master2').digest()
-secret_key_b4=hmac.new(b'b4secret').digest()
+master_key1_b4=hmac.new(b'b4master1', digestmod='md5').digest()
+master_key2_b4=hmac.new(b'b4master2', digestmod='md5').digest()
+secret_key_b4=hmac.new(b'b4secret', digestmod='md5').digest()
 Ib4='broker4ID0000000'
 IDb4=Ib4.encode('utf-8')
 
@@ -304,9 +304,9 @@ b4=[Fb4pie, Fb4_1, Fb4_2]
 
 
 #broker5
-master_key1_b5=hmac.new(b'b5master1').digest()
-master_key2_b5=hmac.new(b'b5master2').digest()
-secret_key_b5=hmac.new(b'b5secret').digest()
+master_key1_b5=hmac.new(b'b5master1', digestmod='md5').digest()
+master_key2_b5=hmac.new(b'b5master2', digestmod='md5').digest()
+secret_key_b5=hmac.new(b'b5secret', digestmod='md5').digest()
 Ib5='broker5ID0000000'
 IDb5=Ib5.encode('utf-8')
 
@@ -324,9 +324,9 @@ b5=[Fb5pie, Fb5_1, Fb5_2]
 
 
 #broker6
-master_key1_b6=hmac.new(b'b6master1').digest()
-master_key2_b6=hmac.new(b'b6master2').digest()
-secret_key_b6=hmac.new(b'b6secret').digest()
+master_key1_b6=hmac.new(b'b6master1', digestmod='md5').digest()
+master_key2_b6=hmac.new(b'b6master2', digestmod='md5').digest()
+secret_key_b6=hmac.new(b'b6secret', digestmod='md5').digest()
 Ib6='broker6ID0000000'
 IDb6=Ib6.encode('utf-8')
 
@@ -345,9 +345,9 @@ b6=[Fb6pie, Fb6_1, Fb6_2]
 
 #broker7
 
-master_key1_b7=hmac.new(b'b7master1').digest()
-master_key2_b7=hmac.new(b'b7master2').digest()
-secret_key_b7=hmac.new(b'b7secret').digest()
+master_key1_b7=hmac.new(b'b7master1', digestmod='md5').digest()
+master_key2_b7=hmac.new(b'b7master2', digestmod='md5').digest()
+secret_key_b7=hmac.new(b'b7secret', digestmod='md5').digest()
 Ib7='broker7ID0000000'
 IDb7=Ib7.encode('utf-8')
 
@@ -376,9 +376,9 @@ b7=[Fb7pie, Fb7_1, Fb7_2]
 ######b8
 
 
-master_key1_b8=hmac.new(b'b8master1').digest()
-master_key2_b8=hmac.new(b'b8master2').digest()
-secret_key_b8=hmac.new(b'b8secret').digest()
+master_key1_b8=hmac.new(b'b8master1', digestmod='md5').digest()
+master_key2_b8=hmac.new(b'b8master2', digestmod='md5').digest()
+secret_key_b8=hmac.new(b'b8secret', digestmod='md5').digest()
 Ib8='broker8ID0000000'
 IDb8=Ib8.encode('utf-8')
 
@@ -401,9 +401,9 @@ b8=[Fb8pie, Fb8_1, Fb8_2]
 ######b9
 
 
-master_key1_b7=hmac.new(b'b9master1').digest()
-master_key2_b7=hmac.new(b'b9master2').digest()
-secret_key_b7=hmac.new(b'b9secret').digest()
+master_key1_b7=hmac.new(b'b9master1', digestmod='md5').digest()
+master_key2_b7=hmac.new(b'b9master2', digestmod='md5').digest()
+secret_key_b7=hmac.new(b'b9secret', digestmod='md5').digest()
 Ib9='broker9ID0000000'
 IDb9=Ib9.encode('utf-8')
 
@@ -427,9 +427,9 @@ b9=[Fb9pie, Fb9_1, Fb9_2]
 ######b10
 
 
-master_key1_b10=hmac.new(b'b10master1').digest()
-master_key2_b10=hmac.new(b'b10master2').digest()
-secret_key_b10=hmac.new(b'b10secret').digest()
+master_key1_b10=hmac.new(b'b10master1', digestmod='md5').digest()
+master_key2_b10=hmac.new(b'b10master2', digestmod='md5').digest()
+secret_key_b10=hmac.new(b'b10secret', digestmod='md5').digest()
 Ib10='broker10ID0000000'
 IDb10=Ib10.encode('utf-8')
 
@@ -452,9 +452,9 @@ b10=[Fb10pie, Fb10_1, Fb10_2]
 ######b11
 
 
-master_key1_b11=hmac.new(b'b11master1').digest()
-master_key2_b11=hmac.new(b'b11master2').digest()
-secret_key_b11=hmac.new(b'b11secret').digest()
+master_key1_b11=hmac.new(b'b11master1', digestmod='md5').digest()
+master_key2_b11=hmac.new(b'b11master2', digestmod='md5').digest()
+secret_key_b11=hmac.new(b'b11secret', digestmod='md5').digest()
 Ib11='broker11ID0000000'
 IDb11=Ib11.encode('utf-8')
 
@@ -477,9 +477,9 @@ b11=[Fb11pie, Fb11_1, Fb11_2]
 #########b12
 
 
-master_key1_b12=hmac.new(b'b12master1').digest()
-master_key2_b12=hmac.new(b'b12master2').digest()
-secret_key_b12=hmac.new(b'b12secret').digest()
+master_key1_b12=hmac.new(b'b12master1', digestmod='md5').digest()
+master_key2_b12=hmac.new(b'b12master2', digestmod='md5').digest()
+secret_key_b12=hmac.new(b'b12secret', digestmod='md5').digest()
 Ib12='broker12ID0000000'
 IDb12=Ib12.encode('utf-8')
 
@@ -500,9 +500,9 @@ b12=[Fb12pie, Fb12_1, Fb12_2]
 
 ###b13
 
-master_key1_b13=hmac.new(b'b13master1').digest()
-master_key2_b13=hmac.new(b'b13master2').digest()
-secret_key_b13=hmac.new(b'b13secret').digest()
+master_key1_b13=hmac.new(b'b13master1', digestmod='md5').digest()
+master_key2_b13=hmac.new(b'b13master2', digestmod='md5').digest()
+secret_key_b13=hmac.new(b'b13secret', digestmod='md5').digest()
 Ib13='broker13ID0000000'
 IDb13=Ib13.encode('utf-8')
 
@@ -524,9 +524,9 @@ b13=[Fb13pie, Fb13_1, Fb13_2]
 
 ###b14
 
-master_key1_b14=hmac.new(b'b14master1').digest()
-master_key2_b14=hmac.new(b'b14master2').digest()
-secret_key_b14=hmac.new(b'b14secret').digest()
+master_key1_b14=hmac.new(b'b14master1', digestmod='md5').digest()
+master_key2_b14=hmac.new(b'b14master2', digestmod='md5').digest()
+secret_key_b14=hmac.new(b'b14secret', digestmod='md5').digest()
 Ib14='broker14ID0000000'
 IDb14=Ib14.encode('utf-8')
 
@@ -570,7 +570,7 @@ broker_key=[b1,b2,b3,b4,b5,b6]
 
 # print(broker_key)
 
-f_broker_key=open('/Users/chen/PycharmProjects/ICC_2020_forward secure_verifiable/broker_key.txt','wb')
+f_broker_key=open('./data/broker_key.txt','wb')
 pickle.dump(broker_key, f_broker_key, 0)
 f_broker_key.close()
 
@@ -773,7 +773,7 @@ print('addbroker')
 print(len(addbrokertask))
 print(addbrokertask)
 
-f_addbrokertask=open('/Users/chen/PycharmProjects/ICC_2020_forward secure_verifiable/addbrokertask.txt','wb')
+f_addbrokertask=open('./data/addbrokertask.txt','wb')
 pickle.dump(addbrokertask, f_addbrokertask, 0)
 f_addbrokertask.close()
 

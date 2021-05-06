@@ -41,12 +41,12 @@ sys.setrecursionlimit(10000)
 model = AES.MODE_ECB
 
 #读取kw-file关系
-f_broker = open('/Users/chen/PycharmProjects/ICC_2020_forward secure_verifiable/broker.txt','rb')
+f_broker = open('./data/broker.txt','rb')
 broker=pickle.load(f_broker)
 # print(broker)
 
 #读取broker密钥
-f_broker_key = open('/Users/chen/PycharmProjects/ICC_2020_forward secure_verifiable/broker_key.txt','rb')
+f_broker_key = open('./data/broker_key.txt','rb')
 broker_key=pickle.load(f_broker_key)
 # print('broker_key',broker_key)
 
@@ -516,7 +516,7 @@ phex = hex(int(p))
 
 ###########################################添加任务索引
 #读取添加的kw-file关系
-f_addbrokertask = open('/Users/chen/PycharmProjects/ICC_2020_forward secure_verifiable/addbrokertask.txt','rb')
+f_addbrokertask = open('./data/addbrokertask.txt','rb')
 add_brokertask=pickle.load(f_addbrokertask)
 # print('addbrokertask',add_brokertask)
 
