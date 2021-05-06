@@ -1,21 +1,8 @@
-import numpy as np
-import time
-import sys
-import datetime
 import os
-from scipy.sparse import csr_matrix
-import re
-import random
 import hmac
 import hashlib
-import random
 import pickle
 from Crypto.Cipher import AES
-import json
-import string
-from web3 import Web3
-import json
-from web3.middleware import geth_poa_middleware
 #keyword
 
 #build
@@ -34,7 +21,6 @@ from web3.middleware import geth_poa_middleware
 ###### 32K 246
 
 kw=["Accounting", "Financial_Planning", "Human_Resource", "Management Consulting", "Data Entry", "Project Management", "Transcription", "Web Research", "Customer Service", "Technical Support", "Data Extraction", "Data Visualization", "Machine Learning", "Animation", "Audio Production", "Motion Graphics", "Photography", "Information Security", "Contract Law","Criminal Law"]
-#kw=["Accounting", "Financial_Planning"]
 
 for i in range(len(kw)):
     kw[i]=kw[i].encode(('utf-8'))
@@ -42,8 +28,6 @@ for i in range(len(kw)):
         print("overflow")
     kw[i]=int.from_bytes(kw[i], byteorder='big')
 
-
-#print(kw)
 ###############################################################任务数量##############################
 each_kw_task_num=8
 
@@ -190,12 +174,6 @@ broker.append(bro6)
 # broker.append(bro12)
 # broker.append(bro13)
 # broker.append(bro14)
-
-
-print('broker')
-print(len(broker))
-print(broker)
-
 
 
 
@@ -769,9 +747,6 @@ addbrokertask.append(addbro6)
 # addbrokertask.append(addbro12)
 # addbrokertask.append(addbro13)
 # addbrokertask.append(addbro14)
-print('addbroker')
-print(len(addbrokertask))
-print(addbrokertask)
 
 f_addbrokertask=open('./data/addbrokertask.txt','wb')
 pickle.dump(addbrokertask, f_addbrokertask, 0)

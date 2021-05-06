@@ -1,27 +1,15 @@
-import numpy as np
-import time
 import sys
 import datetime
-import os
-from scipy.sparse import csr_matrix
-import re
-import random
-import hashlib
-import hmac
-import random
 import pickle
-import gmpy
 from Crypto.Cipher import AES
 import json
-import string
 from web3 import Web3
 import gmpy2
 from gmpy2 import mpz
 from web3 import Web3
 import json
 from web3.middleware import geth_poa_middleware
-import struct
-from web3 import Web3, HTTPProvider, IPCProvider, WebsocketProvider
+from web3 import Web3
 
 # w3 = Web3(HTTPProvider('http://localhost:8540'))
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8540"))
