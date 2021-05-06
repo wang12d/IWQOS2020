@@ -15,7 +15,6 @@ from Crypto.Cipher import AES
 import json
 import string
 from web3 import Web3
-from pypbc import *
 import gmpy2
 from gmpy2 import mpz
 from web3 import Web3
