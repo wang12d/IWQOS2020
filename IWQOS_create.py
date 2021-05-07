@@ -28,6 +28,9 @@ for i in range(len(kw)):
         print("overflow")
     kw[i]=int.from_bytes(kw[i], byteorder='big')
 
+for k in kw:
+    print(k)
+exit(0)
 ###############################################################任务数量##############################
 each_kw_task_num=8
 

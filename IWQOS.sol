@@ -1,6 +1,7 @@
-pragma solidity >=0.4.22 <=0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 < 0.8.0;
 
-contract federated{
+contract IWQOS{
 
     uint256 constant broker_number  = 6;
     mapping(uint256 =>  bytes []) public authorization;
@@ -23,11 +24,11 @@ contract federated{
     // }
 
     ////授权
-    function setauthorize(uint256 tok, bytes authori) public{
+    function setauthorize(uint256 tok, bytes memory authori) public{
         authorization[tok].push(authori);
     }
 
-     function get_authorize(uint256 tok, uint256 index ) public view returns (bytes){
+     function get_authorize(uint256 tok, uint256 index ) public view returns (bytes memory){
         return authorization[tok][index];
     }
 
@@ -53,15 +54,15 @@ contract federated{
 
     //search token
      //  计算幂
-    function expmod(bytes g, uint256 x, bytes p) public view returns ( bytes) {
+    function expmod(bytes memory g, uint256 x, bytes memory p) public view returns ( bytes memory) {
       require(p.length == 384,"unqualified length of p");
       require(g.length == 384,"unqualified length of g");
-      bytes memory input = abi.encodePacked(bytes32(g.length),bytes32(0x20),bytes32(p.length),g,bytes32(x),p);
+      bytes memory input = abi.encodePacked(bytes32(g.length),bytes32(uint256(0x20)),bytes32(p.length),g,bytes32(x),p);
     //   bytes memory result = new bytes(384);
         bytes memory result = new bytes(384);
       bytes memory pointer = new bytes(384);
       assembly {
-          if iszero(staticcall(sub(gas, 2000), 0x05, add(input,0x20), 0x380, add(pointer,0x20), 0x180 )) {
+          if iszero(staticcall(sub(gas(), 2000), 0x05, add(input,0x20), 0x380, add(pointer,0x20), 0x180 )) {
              revert(0, 0)
           }
       }
@@ -81,7 +82,7 @@ contract federated{
 
 
 
-    function setP(bytes p) public{
+    function setP(bytes memory p) public{
         pp=p;
     }
 
@@ -98,7 +99,7 @@ contract federated{
 
 
     //字符串拼接
-    function concat(bytes a, bytes32 b) public view returns (bytes memory) {
+    function concat(bytes memory a, bytes32 b) public view returns (bytes memory) {
         return abi.encodePacked(a,b);
     }
 
@@ -127,7 +128,7 @@ contract federated{
      }
 
 
-    function  get_returnC() public view returns (bytes32[]){
+    function  get_returnC() public view returns (bytes32[] memory){
         return returnC;
     }
 
